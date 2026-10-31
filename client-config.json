@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "defaultHost": "<from-proxy>",
+  "defaultProxy": "",
+  "defaultProxies": [],
+  "mapsProvider": "https://maps.mcraft.fun/",
+  "skinTexturesProxy": "",
+  "p2pRelayServer": "wss://p2p.mcraft.fun",
+  "promoteServers": [],
+  "rightSideText": "MineOs",
+  "splashText": "MineOs ile oyna!",
+  "splashTextFallback": "Welcome!",
+  "pauseLinks": [
+    [
+      {
+        "type": "github"
+      },
+      {
+        "type": "discord"
+      }
+    ]
+  ],
+  "defaultUsername": "mcrafter{0-9999}",
+  "mobileButtons": [
+    {
+      "action": "general.selectItem",
+      "actionHold": "",
+      "label": "S"
+    },
+    {
+      "action": "general.debugOverlay",
+      "actionHold": "general.debugOverlayHelpMenu",
+      "label": "F3"
+    },
+    {
+      "action": "general.playersList",
+      "actionHold": "",
+      "icon": "pixelarticons:users",
+      "label": "TAB"
+    },
+    {
+      "action": "general.chat",
+      "actionHold": "",
+      "label": ""
+    },
+    {
+      "action": "ui.pauseMenu",
+      "actionHold": "",
+      "label": ""
+    }
+  ]
+}

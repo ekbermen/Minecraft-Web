@@ -1,0 +1,23 @@
+[build]
+  # Client kodu build sırasında zardoy/minecraft-web-client (next) reposundan çekilir
+  command = "git clone --depth 1 -b next https://github.com/zardoy/minecraft-web-client.git client-src && cp client-config.json client-src/config.json && cd client-src && corepack enable && node scripts/dockerPrepare.mjs && pnpm install --no-frozen-lockfile && pnpm run build && cd .. && rm -rf site && mkdir -p site/client && cp -r client-src/dist/. site/client/ && cp -r mineos-ui/. site/"
+  publish = "site"
+
+[build.environment]
+  NODE_VERSION = "20"
+  DISABLE_SERVICE_WORKER = "true"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[headers]]
+  for = "/client/*"
+  [headers.values]
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Embedder-Policy = "require-corp"
+
+[[headers]]
+  for = "/client/*.wasm"
+  [headers.values]
+    Content-Type = "application/wasm"
